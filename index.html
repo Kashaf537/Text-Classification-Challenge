@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Classification</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; background: #f4f4f4; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
+        textarea { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; }
+        button { padding: 10px 20px; background: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .result { margin-top: 20px; font-size: 18px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sentiment Classification</h2>
+        <form method="post">
+            <label for="user_input">Enter text:</label>
+            <textarea name="user_input" rows="4" placeholder="Type your text here...">{{ input_text if input_text else "" }}</textarea>
+            <button type="submit">Predict Sentiment</button>
+        </form>
+        {% if result %}
+        <div class="result">Sentiment: {{ result }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
